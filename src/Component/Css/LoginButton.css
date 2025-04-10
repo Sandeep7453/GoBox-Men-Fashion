@@ -1,0 +1,50 @@
+/* From Uiverse.io by Navarog21 */ 
+.login_signup {
+    width: 10em;
+    position: relative;
+    height: 2.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login_signup::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #1e2939;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+  
+  .login_signup::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #1e2939;
+    transition: 0.5s;
+  }
+  
+  .login_signup:hover::before, .login_signup:hover::after {
+    transform: scale(0)
+  }
+
+
+
+  .login_signup:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }
+  
