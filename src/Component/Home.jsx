@@ -48,15 +48,24 @@ const Home = () => {
         <Gridlayout/>
         <TrustPoints/>
         
-       <div className="hidden md:flex justify-center items-center border-0 rounded-4xl border-gray-900 h-[40vh] mx-5 bg-gray-800 w-[80vw]" >
-        <img className=" pb-5 " src="https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743967513/Mens-Category-Landscape-03-removebg-preview_ll4fqi.png" alt="" />
-        <div>
-        <h1 className="text-8xl mb-5 mr-10">M E N</h1>
+       <motion.div className="hidden md:flex justify-center items-center border-0 rounded-4xl border-gray-900 h-[40vh] mx-5 bg-gray-800 w-[80vw]" >
+        <motion.img
+        initial={{opacity:0.8, scale:0.7}}
+        whileInView={{opacity:1, scale:1.05}}
+        transition={{duration0:0.3 , delay:0.1, ease: 'easeInOut'}}
+        className=" pb-5 " src="https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743967513/Mens-Category-Landscape-03-removebg-preview_ll4fqi.png" alt="" />
+        <motion.div 
+         initial={{ opacity: 0, scale: 0.8 }}
+         whileInView={{ opacity: 1, scale: 1 }}
+         transition={{ duration: 0.5, delay: 0.2, ease: 'easeInOut' }}
+        >
+          
+        <h1 className="text-8xl mb-5 mr-10 ">M E N</h1>
         <button className="text-2xl  border-4 border-gray-500 rounded-4xl px-6 py-2 cursor-pointer" onClick={()=>alert("we Are Working On it")}>shop Now</button>
-        </div>
+        </motion.div>
        
         
-       </div>
+       </motion.div>
 
          <BestSeller/>
 
