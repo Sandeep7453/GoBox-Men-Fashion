@@ -5,11 +5,13 @@ import Navbar from "./Component/Navbar";
 import Home from "./Component/Home";
 import Cart from "./Component/Cart";
 import Category from "./Component/Category";
+import Contact from "./Component/Contact-.jsx"
 
 const router = createBrowserRouter([
   { path: "/", element: <> <Navbar /> <Home /> </> },
   { path: "/cart", element: <> <Navbar /> <Cart /> </> },
   { path: "/category/:categoryName", element: <> <Navbar /> <Category /> </> }, // ✅
+  {path : "/customerSupport", element: <><Navbar/> <Contact/></>}
 ]);
 
 function App() {
