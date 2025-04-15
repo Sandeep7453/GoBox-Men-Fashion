@@ -1,6 +1,14 @@
 // Component/Category.jsx
 import { useParams } from "react-router-dom";
 import PrintedTshirt from "./Product/PrintedTshirt";
+import CasualWear from "./Product/CasualWear"
+import Hoodie from "./Product/Hoodie";
+import DenimJeans from "./Product/DenimJeans";
+import OversizedTshirt from "./Product/OversizedTshirt";
+import CargoPants from "./Product/Cargo";
+import TechWearJackets from "./Product/TechWearJackets";
+import Sneakers from "./Product/Sneakers";
+
 
 const Category = () => {
   const { categoryName } = useParams();
@@ -8,9 +16,13 @@ const Category = () => {
   // Map category name to component
   const categoryComponents = {
     "printed-tshirt": <PrintedTshirt />,
-    // Add more categories later like:
-    // "hoodie": <Hoodie />,
-    // "denim-jeans": <DenimJeans />,
+    "casual-wear": <CasualWear/>,
+    "hoodie" : <Hoodie/>,
+    "denim-jeans": <DenimJeans/>,
+    "oversized-tshirt" : <OversizedTshirt/>,
+    "cargo-pants": <CargoPants/>,
+    "techwear-jackets" : <TechWearJackets/>,
+    "sneakers" : <Sneakers/>
   };
 
   return (

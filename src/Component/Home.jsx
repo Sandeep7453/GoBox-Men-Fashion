@@ -9,9 +9,7 @@ import Footer from "./Footer.jsx";
 import Gridlayout from "./Gridlayout.jsx";
 import BestSeller from "./BestSeller.jsx"
 
-
 const Home = () => {
-
 
   return (
 <motion.div className="bg-gradient-to-r from-slate-900 to-slate-700"> 
@@ -34,6 +32,7 @@ const Home = () => {
         <motion.button className="mt-[-2rem] md:mt-[-3rem] px-8 py-2 text-lg font-semibold border-2 border-yellow-500 rounded-lg text-yellow-500 bg-transparent hover:bg-yellow-500 hover:text-black transition-all duration-300" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }} onClick={() => alert("We are working on it!")}>
           Shop Now
         </motion.button>
+       
 
         <HSection />
         

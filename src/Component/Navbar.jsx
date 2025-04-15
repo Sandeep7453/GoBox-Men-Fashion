@@ -12,6 +12,7 @@ function Navbar() {
   const [showNotification, setShowNotification] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [categoryMenuOpen, setCategoryMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
   // Check if user is signed in
@@ -52,7 +53,7 @@ function Navbar() {
               {[
                 "casual-wear", "printed-tshirt", "hoodie", "denim-jeans",
                 "techwear-jackets", "oversized-tshirt", "cargo-pants",
-                "sneaker", "accessories"
+                "sneakers", "accessories"
               ].map((category, index) => (
                 <li key={index} className="px-6 py-2 hover:bg-gray-600 whitespace-nowrap">
                   <Link to={`/category/${category}`}>
@@ -62,7 +63,6 @@ function Navbar() {
               ))}
             </ul>
           </li>
-          
           <li><Link to="/customerSupport">☎️ Customer Support</Link></li>
           <li><button onClick={() => setShowNotification(true)}>🔔</button></li>
           <li><Link to="/cart" className="flex items-center space-x-2"><ShoppingCartIcon className="h-10 w-10" /></Link></li>
@@ -70,38 +70,37 @@ function Navbar() {
 
         {/* Right Side (User Info or Login Button) */}
         {user ? (
-  <div className="hidden md:block relative group text-white">
-    {/* Profile Icon */}
-    <img
-      src={user.photoURL}
-      alt="Profile"
-      className="w-10 h-10 rounded-full cursor-pointer border-2 border-yellow-400"
-    />
+          <div className="hidden md:block relative group text-white">
+            {/* Profile Icon */}
+            <img
+              src={user.photoURL}
+              alt="Profile"
+              className="w-10 h-10 rounded-full cursor-pointer border-2 border-yellow-400"
+            />
 
-    {/* Dropdown on Hover */}
-    <div className="absolute right-0 mt-2 bg-white text-black rounded shadow-md w-48 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-      <div className="px-4 py-2 border-b text-sm font-semibold">
-        {user.displayName}
-      </div>
-      <button
-        onClick={handleLogout}
-        className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-600"
-      >
-        Logout
-      </button>
-    </div>
-  </div>
-) : (
-  <motion.button
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.9 }}
-    className="hidden md:flex items-center px-4 py-1 border border-gray-500 rounded-lg hover:bg-gray-600 hover:text-gray-200 transition"
-    onClick={() => setShowLogin(true)}
-  >
-    <span >Login</span>
-  </motion.button>
-)}
-
+            {/* Dropdown on Hover */}
+            <div className="absolute right-0 mt-2 bg-white text-black rounded shadow-md w-48 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="px-4 py-2 border-b text-sm font-semibold">
+                {user.displayName}
+              </div>
+              <button
+                onClick={handleLogout}
+                className="w-full text-left px-4 py-2 hover:bg-red-100 text-red-600"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        ) : (
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
+            className="hidden md:flex items-center px-4 py-1 border border-gray-500 rounded-lg hover:bg-gray-600 hover:text-gray-200 transition"
+            onClick={() => setShowLogin(true)}
+          >
+            <span>Login</span>
+          </motion.button>
+        )}
 
         {/* Hamburger (Mobile) */}
         <motion.button 
@@ -124,6 +123,35 @@ function Navbar() {
             <li><Link to="/support" onClick={() => setMobileMenuOpen(false)}>☎️ Customer Support</Link></li>
             <li><button onClick={() => setShowNotification(true)}>🔔 Notifications</button></li>
 
+            {/* Categories in Mobile Menu */}
+            <li className="text-lg font-semibold text-white py-2 hidden">Categories</li>
+
+            {/* Category Toggle */}
+            <div className="flex flex-col space-y-3">
+              <button className="category-toggle text-white py-2" onClick={() => setCategoryMenuOpen(!categoryMenuOpen)}>
+                <span>Browse Categories</span>
+              </button>
+
+              {categoryMenuOpen && (
+                <div className="space-y-2 bg-gray-800 p-4 rounded-md">
+                  {[
+                    "casual-wear", "printed-tshirt", "hoodie", "denim-jeans",
+                    "techwear-jackets", "oversized-tshirt", "cargo-pants", "sneakers", "accessories"
+                  ].map((category, index) => (
+                    <Link
+                      key={index}
+                      to={`/category/${category}`}
+                      className="block text-gray-300 hover:text-gray-100"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {category.replace("-", " ").replace(/\b\w/g, l => l.toUpperCase())}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* User Profile Section */}
             {user ? (
               <li className="flex flex-col items-center space-y-2">
                 <img src={user.photoURL} alt="Profile" className="w-10 h-10 rounded-full" />

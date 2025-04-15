@@ -27,7 +27,12 @@ const Form = () => {
       return;
     }
 
-    const { name, email, message, phone } = formData;
+    const { name, email, message, phone } = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      message: formData.message.trim(),
+      phone: formData.phone.trim(),
+    };
 
     if (!name || !email || !message || !phone) {
       alert('Please fill out all fields.');
@@ -61,44 +66,79 @@ const Form = () => {
   };
 
   return (
-    <div className="min-h-screen bg-center bg-cover flex justify-center items-center pt-[10vh] px-4">
-      <div className="w-full md:w-[60%] p-8 rounded-3xl text-gray-800 shadow-lg border border-gray-700 backdrop-blur-md bg-white/20">
-        <h2 className="text-4xl font-bold text-center mb-6 text-gray-900">
+    <div className="min-h-screen bg-gray-900 flex justify-center items-center pt-[10vh] px-4">
+      <div className="w-full max-w-2xl p-8 bg-gray-800 rounded-3xl shadow-xl border border-gray-700">
+        <h2 className="text-3xl font-bold text-center text-white mb-6">
           Connect With Us
         </h2>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          {['Name', 'Email', 'Message', 'Phone'].map((label, index) => (
-            <div key={index}>
-              <label className="text-lg font-semibold text-gray-900">
-                {label}:
-              </label>
-              {label === 'Message' ? (
-                <textarea
-                  name="message"
-                  placeholder="Write your message here..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="p-3 h-32 rounded-lg bg-transparent text-gray-900 border border-gray-700"
-                />
-              ) : (
-                <input
-                  type={label === 'Email' ? 'email' : label === 'Phone' ? 'tel' : 'text'}
-                  name={label.toLowerCase()}
-                  placeholder={`Enter your ${label.toLowerCase()}`}
-                  value={formData[label.toLowerCase()]}
-                  onChange={handleChange}
-                  className="p-3 rounded-lg bg-transparent text-gray-900 border border-gray-700"
-                />
-              )}
-            </div>
-          ))}
+        <form onSubmit={handleSubmit} className="space-y-5">
+          {/* Name */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-300 mb-1">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-gray-900 text-white placeholder-gray-500"
+            />
+          </div>
 
-          <div className="flex justify-center items-center">
+          {/* Email */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-300 mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-gray-900 text-white placeholder-gray-500"
+            />
+          </div>
+
+          {/* Phone */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-300 mb-1">
+              Phone
+            </label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              value={formData.phone}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-gray-900 text-white placeholder-gray-500"
+            />
+          </div>
+
+          {/* Message */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-300 mb-1">
+              Message
+            </label>
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Write your message here..."
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-gray-900 text-white placeholder-gray-500 resize-none"
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <div className="flex justify-center">
             <button
               type="submit"
               disabled={loading}
-              className="mt-4 w-fit bg-emerald-700 hover:bg-emerald-900 text-white text-lg font-bold p-3 rounded-lg border border-gray-700 disabled:opacity-50"
+              className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed shadow-md hover:shadow-emerald-500/30"
             >
               {loading ? 'Sending...' : 'Send Message 🚀'}
             </button>

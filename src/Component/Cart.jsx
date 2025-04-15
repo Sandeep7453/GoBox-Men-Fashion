@@ -1,11 +1,9 @@
-// Component/Cart.jsx
+import React from 'react'
 
 const Cart = () => {
   return (
-    <div className="text-white p-6">
-      <h1>Your Cart</h1>
-    </div>
-  );
-};
+    <div>Cart</div>
+  )
+}
 
-export default Cart; // ✅ Yeh zaroori hai
+export default Cart
