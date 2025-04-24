@@ -16,7 +16,7 @@ const Category = () => {
 
   // Map category name to component
   const categoryComponents = {
-    "oversized-tshirt" : <OversizedTshirt/>,
+        "oversized-tshirt" : <OversizedTshirt/>,
     "printed-tshirt": <PrintedTshirt />,
     "casual-wear": <CasualWear/>,
     "hoodie" : <Hoodie/>,
