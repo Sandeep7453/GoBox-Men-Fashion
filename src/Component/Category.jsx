@@ -8,6 +8,7 @@ import OversizedTshirt from "./Product/OversizedTshirt";
 import CargoPants from "./Product/Cargo";
 import TechWearJackets from "./Product/TechWearJackets";
 import Sneakers from "./Product/Sneakers";
+import Accessories from "./Product/Accesories";
 
 
 const Category = () => {
@@ -15,14 +16,16 @@ const Category = () => {
 
   // Map category name to component
   const categoryComponents = {
+    "oversized-tshirt" : <OversizedTshirt/>,
     "printed-tshirt": <PrintedTshirt />,
     "casual-wear": <CasualWear/>,
     "hoodie" : <Hoodie/>,
     "denim-jeans": <DenimJeans/>,
-    "oversized-tshirt" : <OversizedTshirt/>,
+
     "cargo-pants": <CargoPants/>,
     "techwear-jackets" : <TechWearJackets/>,
-    "sneakers" : <Sneakers/>
+    "sneakers" : <Sneakers/>,
+    "accessories":<Accessories/>
   };
 
   return (

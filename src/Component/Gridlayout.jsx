@@ -91,6 +91,7 @@ const LeftGrid = [
       "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743936666/Straight-Leg-Utility-Cargo-Pants-thestreetsofseoul-korean-street-style-minimal-streetwear-k-style-kstyle-mens-affordable-clothing_j4x4la.webp",
       "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743936667/download_o2uqqn.jpg"
     ]
+  
   }
   ,
   {
@@ -161,6 +162,8 @@ const App = () => {
               onClick={() => setSelectedCard(item)}
             >
               {item.images.length > 0 && (
+                
+                
                 <img
                   src={item.images[0]}
                   alt=""

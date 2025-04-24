@@ -5,31 +5,31 @@ const hoodieData = [
     id: 1,
     title: "Classic Black Hoodie",
     price: 1299,
-    image: "https://source.unsplash.com/400x400/?black,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/34_3a833566-9262-4ea6-b93f-e2e9f1eb8f15_rov5yw.webp",
   },
   {
     id: 2,
     title: "Grey Zip Hoodie",
     price: 1499,
-    image: "https://source.unsplash.com/400x400/?grey,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/972c93e53d3bca08416a4b20636def7f_dwncdy.jpg",
   },
   {
     id: 3,
     title: "Streetwear Red Hoodie",
     price: 1399,
-    image: "https://source.unsplash.com/400x400/?red,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933403/rb_votfne.webp",
   },
   {
     id: 4,
     title: "Oversized Blue Hoodie",
     price: 1599,
-    image: "https://source.unsplash.com/400x400/?blue,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933403/blog-article-image-how-to-style-mens-oversized-hoodies-for-a-streetwear-look_zr0z4e.webp",
   },
   {
     id: 5,
     title: "Minimal Beige Hoodie",
     price: 1449,
-    image: "https://source.unsplash.com/400x400/?beige,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/65a80e7847883a30c3276f39-niepce-inc-streetwear-men-39-s_ew33rb.jpg",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ const hoodieData = [
     id: 9,
     title: "Zip-Up Black Hoodie",
     price: 1399,
-    image: "https://source.unsplash.com/400x400/?zipper,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/34_3a833566-9262-4ea6-b93f-e2e9f1eb8f15_rov5yw.webp",
   },
   {
     id: 10,
@@ -71,13 +71,13 @@ const hoodieData = [
     id: 12,
     title: "Anime Print Hoodie",
     price: 1499,
-    image: "https://source.unsplash.com/400x400/?anime,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/34_3a833566-9262-4ea6-b93f-e2e9f1eb8f15_rov5yw.webp",
   },
   {
     id: 13,
     title: "Techwear Hoodie",
     price: 1749,
-    image: "https://source.unsplash.com/400x400/?techwear,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/972c93e53d3bca08416a4b20636def7f_dwncdy.jpg",
   },
   {
     id: 14,
@@ -89,7 +89,7 @@ const hoodieData = [
     id: 15,
     title: "Graphic Street Hoodie",
     price: 1599,
-    image: "https://source.unsplash.com/400x400/?graphic,hoodie",
+    image: "https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1743933402/972c93e53d3bca08416a4b20636def7f_dwncdy.jpg",
   },
 ];
 

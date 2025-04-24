@@ -51,8 +51,8 @@ function Navbar() {
             <span className="cursor-pointer">Category</span>
             <ul className="absolute left-1/2 transform mt-2 -translate-x-1/2 bg-gray-700 text-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 text-sm md:text-base min-w-[150px]">
               {[
-                "casual-wear", "printed-tshirt", "hoodie", "denim-jeans",
-                "techwear-jackets", "oversized-tshirt", "cargo-pants",
+                 "oversized-tshirt", "printed-tshirt", "hoodie", "denim-jeans",
+                "techwear-jackets", "cargo-pants", "casual-wear",
                 "sneakers", "accessories"
               ].map((category, index) => (
                 <li key={index} className="px-6 py-2 hover:bg-gray-600 whitespace-nowrap">

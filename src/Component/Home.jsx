@@ -8,7 +8,8 @@ import TrustPoints from "./TrustPoints.jsx";
 import Footer from "./Footer.jsx";
 import Gridlayout from "./Gridlayout.jsx";
 import BestSeller from "./BestSeller.jsx"
-
+import { Link } from "react-router";
+import OversizedTshirt from "../Component/Product/OversizedTshirt.jsx"
 const Home = () => {
 
   return (
@@ -37,7 +38,11 @@ const Home = () => {
         <HSection />
         
 <div className="flex flex-col md:flex-row">
-  <img src="https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1744016427/hangover-sale-icon-banners_2-removebg-preview_1_yx6vor.png" alt=""  className="cursor-pointer" onClick={()=> alert("We Are Working On it")}/>
+
+  <Link to="/oversized-tshirt">
+  <img src="https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1744016427/hangover-sale-icon-banners_2-removebg-preview_1_yx6vor.png" alt=""  className="cursor-pointer"/>
+  </Link>
+  
   <img src="https://res.cloudinary.com/denwy5y4y/image/upload/f_auto/v1744020171/XXXX-removebg-preview_ow1lys.png" alt=""  className=" cursor-pointer" onClick={()=> alert("We Are Working On it")}/>
 </div>
        
