@@ -9,7 +9,7 @@ import Footer from "./Footer.jsx";
 import Gridlayout from "./Gridlayout.jsx";
 import BestSeller from "./BestSeller.jsx"
 import { Link } from "react-router";
-import OversizedTshirt from "../Component/Product/OversizedTshirt.jsx"
+
 const Home = () => {
 
   return (
@@ -63,6 +63,7 @@ const Home = () => {
          whileInView={{ opacity: 1, scale: 1 }}
          transition={{ duration: 0.5, delay: 0.2, ease: 'easeInOut' }}
         >
+          
           
         <h1 className="text-8xl mb-5 mr-10 ">M E N</h1>
         <button className="text-2xl  border-4 border-gray-500 rounded-4xl px-6 py-2 cursor-pointer" onClick={()=>alert("we Are Working On it")}>shop Now</button>

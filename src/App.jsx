@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   { path: "/cart", element: <> <Navbar /> <Cart /> </> },
   { path: "/category/:categoryName", element: <> <Navbar /> <Category /> </> }, // ✅
   {path : "/customerSupport", element: <><Navbar/> <Contact/></>},
-  {path: "/oversized-tshirt", element: <><OversizedTshirt/> </>}
+  {path: "/oversized-tshirt", element: <> <Navbar/> <OversizedTshirt/> </>}
 ]);
 
 function App() {

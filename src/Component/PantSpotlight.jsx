@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
 const PantSpotlight = ({ title, data }) => {
-  return (
+  return (  
     <div className="relative z-0 h-full w-full bg-transparent py-4">
       <h2 className="md:text-5xl text-4xl font-serif text-center  px-5 bg-gradient-to-r from-blue-200 to-cyan-700 text-transparent bg-clip-text py-5">
         {title}
@@ -23,17 +23,20 @@ const PantSpotlight = ({ title, data }) => {
           depth: 200,
           modifier: 2,
           slideShadows: true,
+          
         }}
         pagination={{ clickable: true }}
         modules={[EffectCoverflow, Pagination]}
         className="w-full max-w-6xl mx-auto"
-      >
+      > 
+      
         {data.map((item) => (
           <SwiperSlide
             key={item.id}
             style={{ width: '300px' }}
             className="bg-gray-900 text-white rounded-lg shadow-lg p-2 flex flex-col justify-center items-center h-fit"
           >
+            
             <img
               src={item.image}
               alt={item.name}
