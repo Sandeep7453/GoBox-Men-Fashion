@@ -55,11 +55,14 @@ function Navbar() {
                 "techwear-jackets", "cargo-pants", "casual-wear",
                 "sneakers", "accessories"
               ].map((category, index) => (
-                <li key={index} className="px-6 py-2 hover:bg-gray-600 whitespace-nowrap">
-                  <Link to={`/category/${category}`}>
+                <Link to={`/category/${category}`}>  <li key={index} className="px-6 py-2 hover:bg-gray-600 whitespace-nowrap">
+                 
                     {category.replace("-", " ").replace(/\b\w/g, l => l.toUpperCase())}
-                  </Link>
+                 
                 </li>
+                </Link> 
+              
+
               ))}
             </ul>
           </li>

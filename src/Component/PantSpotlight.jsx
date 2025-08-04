@@ -36,7 +36,6 @@ const PantSpotlight = ({ title, data }) => {
             style={{ width: '300px' }}
             className="bg-gray-900 text-white rounded-lg shadow-lg p-2 flex flex-col justify-center items-center h-fit"
           >
-            
             <img
               src={item.image}
               alt={item.name}
@@ -46,6 +45,7 @@ const PantSpotlight = ({ title, data }) => {
             <p className="text-sm text-gray-500">{item.tagline}</p>
             <p className="text-sm text-gray-400 italic">{item.fabric}</p>
           </SwiperSlide>
+          
         ))}
       </Swiper>
       <hr className="w-[80vw] h-[0.5px] my-5 bg-gray-600 border-none mx-auto" />

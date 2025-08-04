@@ -21,7 +21,6 @@ const Category = () => {
     "casual-wear": <CasualWear/>,
     "hoodie" : <Hoodie/>,
     "denim-jeans": <DenimJeans/>,
-
     "cargo-pants": <CargoPants/>,
     "techwear-jackets" : <TechWearJackets/>,
     "sneakers" : <Sneakers/>,

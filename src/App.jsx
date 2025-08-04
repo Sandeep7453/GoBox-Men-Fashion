@@ -3,14 +3,14 @@ import "./App.css";
 
 import Navbar from "./Component/Navbar";
 import Home from "./Component/Home";
-import Cart from "./Component/Cart";
+import CartPage from "./Component/CartPage.jsx";
 import Category from "./Component/Category";
-import Contact from "./Component/Contact-.jsx"
+import Contact from "./Component/Contact.jsx"
 import OversizedTshirt from "./Component/Product/OversizedTshirt.jsx";
 
 const router = createBrowserRouter([
   { path: "/", element: <> <Navbar /> <Home /> </> },
-  { path: "/cart", element: <> <Navbar /> <Cart /> </> },
+  { path: "/cartpage", element: <> <Navbar /> <CartPage /> </> },
   { path: "/category/:categoryName", element: <> <Navbar /> <Category /> </> }, // ✅
   {path : "/customerSupport", element: <><Navbar/> <Contact/></>},
   {path: "/oversized-tshirt", element: <> <Navbar/> <OversizedTshirt/> </>}
