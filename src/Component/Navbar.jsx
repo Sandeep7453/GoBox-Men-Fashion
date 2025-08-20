@@ -68,7 +68,7 @@ function Navbar() {
           </li>
           <li><Link to="/customerSupport">☎️ Customer Support</Link></li>
           <li><button onClick={() => setShowNotification(true)}>🔔</button></li>
-          <li><Link to="/cart" className="flex items-center space-x-2"><ShoppingCartIcon className="h-10 w-10" /></Link></li>
+          <li><Link to="/cartPage" className="flex items-center space-x-2"><ShoppingCartIcon className="h-10 w-10" /></Link></li>
         </ul>
 
         {/* Right Side (User Info or Login Button) */}
@@ -122,7 +122,7 @@ function Navbar() {
         <div className="md:hidden bg-gray-900 p-5 mt-3 rounded-lg">
           <ul className="space-y-4 text-center text-lg text-white">
             <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
-            <li><Link to="/cart" onClick={() => setMobileMenuOpen(false)}>Cart</Link></li>
+            <li><Link to="/cartPage" onClick={() => setMobileMenuOpen(false)}>Cart</Link></li>
             <li><Link to="/support" onClick={() => setMobileMenuOpen(false)}>☎️ Customer Support</Link></li>
             <li><button onClick={() => setShowNotification(true)}>🔔 Notifications</button></li>
 

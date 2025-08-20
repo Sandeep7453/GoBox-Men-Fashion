@@ -1,49 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useCart } from '../CartContext';
 
 const ProductFullData = ({ product, closeModal }) => {
-  if (!product) return null; // If no product is selected, don't render the modal
+  const { addToCart } = useCart();
+  const [added, setAdded] = useState(false); // ✅ show confirmation
 
-  const handleModalClick = (e) => {
-    e.stopPropagation(); // Prevent click event from propagating to the parent div
+  if (!product) return null;
+
+  const handleModalClick = (e) => e.stopPropagation();
+
+  const handleAddToCart = () => {
+    addToCart(product);
+    setAdded(true);           // show message
+    setTimeout(() => setAdded(false), 1500); // hide after 1.5s
   };
 
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50" 
-      onClick={closeModal} // Close modal when clicking outside
+      className="fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm flex justify-center items-center z-50" 
+      onClick={closeModal}
     >
       <div 
-        className="bg-white p-6 rounded-lg shadow-lg w-11/12 sm:w-1/2 md:w-1/3 relative" // Responsive width
-        onClick={handleModalClick} // Prevent closing when clicking inside the modal
+        className="bg-gray-900 p-5 rounded-2xl shadow-2xl w-11/12 sm:w-2/3 md:w-1/2 lg:w-1/3 relative transform transition-transform duration-300 hover:scale-105"
+        onClick={handleModalClick}
       >
-        {/* Cross Button */}
+        {/* Close button */}
         <button 
           onClick={closeModal} 
-          className="absolute top-2 right-2 text-xl font-bold text-white bg-gray-900 px-4 py-2 rounded-full shadow-md hover:bg-gray-600"
+          className="absolute top-3 right-3 text-xl font-bold text-white bg-gray-700 px-3 py-1 rounded-full shadow-md hover:bg-red-600 transition"
         >
-          X
+          ✕
         </button>
-        
+
+        {/* Confirmation message */}
+        {added && (
+          <div className="absolute top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded shadow-lg text-sm animate-bounce">
+            Added to Cart!
+          </div>
+        )}
+
         {/* Product Image */}
         <img 
           src={product.image || "https://via.placeholder.com/400x400"} 
           alt={product.title || "Product Image"} 
-          className="w-full h-60 sm:h-72 md:h-80 object-cover rounded"
+          className="w-full h-60 sm:h-72 md:h-80 object-cover rounded-xl mb-4 border-2 border-gray-700"
         />
-        
+
         {/* Product Title */}
-        <h3 className="text-xl font-semibold mt-4">{product.title || "Sample T-Shirt"}</h3>
-        
+        <h3 className="text-2xl font-bold text-white mb-2">{product.title}</h3>
+
         {/* Product Price */}
-        <p className="text-yellow-400">₹{product.price || "500"}</p>
-        
+        <p className="text-yellow-400 text-lg font-semibold mb-2">₹{product.price}</p>
+
         {/* Product Description */}
-        <p className="mt-4 text-gray-800">{product.description || "This is a random product description to test the modal."}</p>
-        
+        <p className="text-gray-300 mb-4">{product.description}</p>
+
         {/* Add to Cart Button */}
         <button 
-          className="mt-4 w-full bg-yellow-600 text-white py-2 rounded"
-          onClick={() => alert('Added to cart!')} // Just a random action for testing
+          className="w-full py-2 rounded-lg bg-gradient-to-r from-yellow-400 to-yellow-600 text-gray-900 font-bold shadow-lg hover:scale-105 transition transform"
+          onClick={handleAddToCart}
         >
           Add to Cart
         </button>
